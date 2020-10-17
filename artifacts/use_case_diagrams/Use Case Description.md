@@ -1,4 +1,4 @@
-###### Weather Use-Case Description 
+# Weather Use-Case Description 
 
 **Use-Case:** View Weather
 
