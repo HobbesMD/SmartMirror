@@ -1,6 +1,5 @@
 # Overview
-<Describe the purpose of this document in 1 paragraph of less … hint: it is
-your SRS>
+ This is an overview of our software product, its parameters and goals and requirements. This document describes the project's target audience and its user interface, hardware and software requirements.
 # Functional Requirements
 1. <Name of Feature 1>
  1. <Functional Requirement 1>
