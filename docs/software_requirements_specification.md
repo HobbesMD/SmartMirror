@@ -6,7 +6,7 @@
  1. Module shall check weather information and display it on screen with weekly reports.
  1. Users can add and remove locations to receive their weather data.
  1.  On severe weather conditions users gets notified.
-1. Disc Golf News Feature
+2. Disc Golf News Feature
  1. This feature shall display a leaderboard of ongoing Disc Golf Majors, National Tours, and Disc Golf Pro Tour events.
  1. This feature shall have a mechanism to configure which news sources to get information from.
  1. This feature shall display how old the news is relative to the current dat
