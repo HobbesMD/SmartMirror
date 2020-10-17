@@ -1,4 +1,11 @@
-### Weather Use-Case Description 
+#### Weather Use-Case Description 
 
-**This text will be bold**
+**Use-Case:**
 
+**Actors:**
+
+**Description**
+
+**Cross Ref**
+
+**Use-Cases**
