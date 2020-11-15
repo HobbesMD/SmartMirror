@@ -7,30 +7,24 @@ module.exports = NodeHelper.create({
     // subclass start method, clears the initial config array
     start: function () {
         Log.log("Starting node helper for: " + this.name);
-        this.fetchers = [];
+        this.redditFetcher;
     },
     socketNotificationReceived: function (notification, payload) {
-        if (notification === "ADD_FEED") {
-            this.createFetcher(payload.feed, payload.config);
+        if (notification === "ADD_REDDIT") {
+            this.createFetcher(payload);
         }
     },
-    createFetcher: function (feed, config) {
-        const url = feed.url || "";
-        const encoding = feed.encoding || "UTF-8";
-        const reloadInterval = feed.reloadInterval || config.reloadInterval || 5 * 60 * 1000;
-
-        if (!validUrl.isUri(url)) {
-            this.sendSocketNotification("INCORRECT_URL", url);
-            return;
-        }
+    createFetcher: function (config) {
+        const reloadInterval = config.reloadInterval || 5 * 60 * 1000;
+        Log.log(reloadInterval);
 
         let fetcher;
-        if (typeof this.fetchers[url] === "undefined") {
-            Log.log("Create new disc golf fetcher for url: " + url + " - Interval: " + reloadInterval);
-            fetcher = new DiscGolfNewsFetcher(url, reloadInterval, encoding, config.logFeedWarnings);
+        if (this.redditFetcher == null) {
+            Log.log("Create new r/DiscGolf fetcher - Interval: " + reloadInterval);
+            fetcher = new DiscGolfNewsFetcher(reloadInterval);
 
             fetcher.onReceive(() => {
-                this.broadcastFeeds();
+                this.broadcastReddit();
             });
 
             fetcher.onError((fetcher, error) => {
@@ -40,21 +34,18 @@ module.exports = NodeHelper.create({
                 });
             });
 
-            this.fetchers[url] = fetcher;
+            this.redditFetcher = fetcher;
         } else {
-            Log.log("Use existing news fetcher for url: " + url);
-            fetcher = this.fetchers[url];
+            Log.log("Use existing news r/DiscGolf fetcher");
+            fetcher = this.redditFetcher;
             fetcher.setReloadInterval(reloadInterval);
             fetcher.broadcastItems();
         }
 
         fetcher.startFetch();
     },
-    broadcastFeeds: function () {
-        var feeds = {};
-        for (var f in this.fetchers) {
-            feeds[f] = this.fetchers[f].items();
-        }
-        this.sendSocketNotification("DISCGOLF_ITEMS", feeds);
+    broadcastReddit: function () {
+        var self = this;
+        self.sendSocketNotification("REDDIT_ITEMS", self.redditFetcher.items());
     }
 });
