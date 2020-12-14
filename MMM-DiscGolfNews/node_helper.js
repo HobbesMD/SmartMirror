@@ -56,12 +56,13 @@ module.exports = NodeHelper.create({
 	createUltiworldFetcher: function (config) {
 		const reloadInterval = config.reloadInterval || 5 * 60 * 1000;
 		const numUltiArticles = config.numUltiArticles || 5;
+		const authors = config.ultiAuthors || [];
 		Log.log(reloadInterval);
 
 		let fetcher;
 		if (this.redditFetcher == null) {
 			Log.log("Create new Ultiworld fetcher - Interval: " + reloadInterval);
-			fetcher = new UltiworldFetcher(reloadInterval, numUltiArticles);
+			fetcher = new UltiworldFetcher(reloadInterval, numUltiArticles, authors);
 
 			fetcher.onReceive(() => {
 				this.broadcastUltiworld();

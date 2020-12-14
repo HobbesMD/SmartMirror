@@ -2,7 +2,7 @@ const Log = require("../../js/logger.js");
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const Ultiworld_Fetcher = function (reloadInterval, numArticles) {
+const Ultiworld_Fetcher = function (reloadInterval, numArticles, authors) {
 	const self = this;
 	let reloadTimer = null;
 	let items = [];
@@ -17,7 +17,8 @@ const Ultiworld_Fetcher = function (reloadInterval, numArticles) {
 		items = [];
 		
 		let url = 'https://discgolf.ultiworld.com/category/news/';
-		
+
+		console.log(authors);
 		// Find the most recent event
 		axios.get(url)
 			.then(response => {
@@ -33,12 +34,15 @@ const Ultiworld_Fetcher = function (reloadInterval, numArticles) {
 					if (date.indexOf("by") > 0) {
 						date = date.substring(0, date.indexOf("by")).trim();
 					}
-					
-					items.push({
-						title: title,
-						date: date,
-						author: author
-					})
+
+					console.log(author);
+					if (authors.length > 0 && authors.includes(author)) {
+						items.push({
+							title: title,
+							date: date,
+							author: author
+						})
+					}
 				});
 
 				self.broadcastItems();
