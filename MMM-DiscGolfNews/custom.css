@@ -1,0 +1,131 @@
+.wrapper {
+  width: 420px;
+  float: right;
+}
+
+.reddit-title {
+  font-family: Arial;
+  font-size: 26px;
+  border-bottom: solid;
+  text-align: center;
+}
+
+.reddit-post-row {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.reddit-post-row > td {
+  padding-top: 5px;
+}
+
+.reddit-post-title {
+  text-align: left;
+  overflow-wrap: normal;
+  width: 60%;
+}
+
+.reddit-post-score {
+  color: #d68213;
+  padding-right: 15px;
+}
+
+.reddit-post-date {
+  color: #4f4f4f;
+}
+
+
+
+.ultiworld-title {
+  font-family: Arial;
+  font-size: 26px;
+  border-bottom: solid;
+  text-align: center;
+}
+
+.ultiworld-article-row {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.ultiworld-article-row > td {
+  padding-top: 5px;
+}
+
+.ultiworld-article-title {
+  text-align: left;
+  overflow-wrap: normal;
+  width: 60%;
+}
+
+.ultiworld-article-author {
+  color: #808080;
+  text-align: left;
+}
+
+.ultiworld-article-date {
+  color: #4f4f4f;
+  text-align: left;
+}
+
+
+
+.tournament-name {
+  font-family: Arial;
+  font-size: 26px;
+  border-bottom: solid;
+  text-align: left;
+  line-height: 1em;
+  padding-bottom: 3px;
+}
+
+.division-title {
+  text-align: left;
+  font-size: 20px;
+  height: 40px;
+  border-bottom: dashed;
+}
+
+.division-table {
+  font-size: 20px;
+  border-bottom: dashed;
+}
+
+.player-row {
+  line-height: 30px;
+}
+
+.player-info {
+  text-align: left;
+}
+
+.player-info > div {
+  vertical-align: top;
+  display: inline-block;
+}
+
+.player-name {
+  text-align: left;
+  padding-right: 10px;
+}
+
+.player-rating {
+  color: #4f4f4f;
+}
+
+.player-pos {
+  padding-right: 15px;
+  text-align: center;
+}
+
+.player-score-under {
+  color: #bd1a1a;
+}
+
+.player-score-over {
+  color: #d1c2c2;
+}
+
+.player-tournament-rating {
+  color: #8a8888;
+}
