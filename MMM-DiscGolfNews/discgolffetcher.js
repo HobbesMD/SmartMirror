@@ -4,7 +4,7 @@ const request = require("request");
 const iconv = require("iconv-lite");
 const snoowrap = require("snoowrap");
 
-const DiscGolfNewsFetcher = function (reloadInterval) {
+const DiscGolfRedditFetcher = function (reloadInterval, postsLimit) {
     const self = this;
     const r = new snoowrap({
         userAgent: 'A random string.',
@@ -14,6 +14,7 @@ const DiscGolfNewsFetcher = function (reloadInterval) {
     });
     r.config({proxies:false})
 
+	let itemsReceivedCallback;
     let reloadTimer = null;
     let items = [];
 
@@ -29,7 +30,7 @@ const DiscGolfNewsFetcher = function (reloadInterval) {
         const subreddit = r.getSubreddit('discgolf');
         const hotPosts = subreddit.getHot();
 
-        r.getSubreddit('discgolf').getHot({ limit: 5 })
+        r.getSubreddit('discgolf').getHot({ limit: postsLimit })
             .map(post => {
                 let title = post.title;
                 if (post.title.length > 60) {
@@ -43,7 +44,7 @@ const DiscGolfNewsFetcher = function (reloadInterval) {
                     created: new Date(post.created_utc * 1000)
                 }
             }).then(posts => {
-                items = posts;
+				items = posts;
                 self.broadcastItems();
                 scheduleTimer();
             });
@@ -62,20 +63,20 @@ const DiscGolfNewsFetcher = function (reloadInterval) {
         }
     };
 
-    this.startFetch = function () {
+	this.startFetch = function () {
         fetchReddit();
     };
     
     this.broadcastItems = function () {
         if (items.length <= 0) {
-            Log.info("DiscGolfNews-Fetcher: No items to broadcast yet.");
+            Log.info("Reddit-Fetcher: No items to broadcast yet.");
             return;
-        }
-        Log.info("DiscGolfNews-Fetcher: Broadcasting " + items.length + " items.");
+		}
+		Log.info("Reddit-Fetcher: Broadcasting " + items.length + " items.");
         itemsReceivedCallback(self);
     };
 
-    this.onReceive = function (callback) {
+	this.onReceive = function (callback) {
         itemsReceivedCallback = callback;
     };
 
@@ -83,9 +84,9 @@ const DiscGolfNewsFetcher = function (reloadInterval) {
         fetchFailedCallback = callback;
     };
 
-    this.items = function () {
+	this.items = function () {
         return items;
     };
 };
 
-module.exports = DiscGolfNewsFetcher;
+module.exports = DiscGolfRedditFetcher;
