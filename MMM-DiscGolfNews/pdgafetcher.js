@@ -19,7 +19,8 @@ const PDGA_Fetcher = function (reloadInterval, eventIDs, numEvents, eventTypes, 
       eventTypes.push("A");
     }
   }
-  
+
+  let itemsReceivedCallback;
   let reloadTimer = null;
   let items = [];
 
@@ -43,7 +44,8 @@ const PDGA_Fetcher = function (reloadInterval, eventIDs, numEvents, eventTypes, 
     		addEvent('/tour/event/' + eventIDs[i]);
     	}
     }
-	if (eventTypes.length > 0) {
+
+	if (eventTypes.length > 0 && numEvents > 0) {
     	// Find the most recent event
 		axios.get(url)
 		   .then(response => {
@@ -124,6 +126,7 @@ const PDGA_Fetcher = function (reloadInterval, eventIDs, numEvents, eventTypes, 
 	   		location: location,
 	   		divisions: playerDivs
 	   	})
+
 	   	self.broadcastItems();
 	   	scheduleTimer();
 	   })
@@ -204,6 +207,7 @@ const PDGA_Fetcher = function (reloadInterval, eventIDs, numEvents, eventTypes, 
       Log.info("PDGA-Fetcher: No items to broadcast yet.");
       return;
     }
+
     Log.info("PDGA-Fetcher: Broadcasting " + items.length + " items.");
     itemsReceivedCallback(self);
   };

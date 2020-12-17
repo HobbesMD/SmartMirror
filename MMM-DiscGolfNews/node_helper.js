@@ -11,9 +11,9 @@ module.exports = NodeHelper.create({
         Log.log("Starting node helper for: " + this.name);
 		this.redditFetcher;
 		this.pdgaFetcher;
-		this.ultiworldFetcher
+		this.ultiworldFetcher;
     },
-    socketNotificationReceived: function (notification, payload) {
+	socketNotificationReceived: function (notification, payload) {
 		if (notification === "ADD_REDDIT") {
 			this.createRedditFetcher(payload);
 		} else if (notification == "ADD_PDGA") {
@@ -60,10 +60,10 @@ module.exports = NodeHelper.create({
 		Log.log(reloadInterval);
 
 		let fetcher;
-		if (this.redditFetcher == null) {
+		if (this.ultiworldFetcher == null) {
 			Log.log("Create new Ultiworld fetcher - Interval: " + reloadInterval);
 			fetcher = new UltiworldFetcher(reloadInterval, numUltiArticles, authors);
-
+			
 			fetcher.onReceive(() => {
 				this.broadcastUltiworld();
 			});
@@ -91,44 +91,48 @@ module.exports = NodeHelper.create({
 		const divisions = config.divisions || ["MPO"];
 		const topX = config.topX || 5;
 		const eventIDs = config.eventIDs || [];
-		const numEvents = config.numEvents || 1;
+		let numEvents = config.numEvents || 1;
 
-		let fetcher;
+		if (config.numEvents === 0) {
+			numEvents = 0;
+		}
+
+		let pdgaFetch;
 		if (this.pdgaFetcher == null) {
 			Log.log("Create new PDGA fetcher - Interval: " + reloadInterval);
-			fetcher = new PDGA_Fetcher(reloadInterval, eventIDs, numEvents, tiers, topX, divisions);
-
-			fetcher.onReceive(() => {
+			pdgaFetch = new PDGA_Fetcher(reloadInterval, eventIDs, numEvents, tiers, topX, divisions);
+			
+			pdgaFetch.onReceive(() => {
 				this.broadcastPDGA();
 			});
 
-			fetcher.onError((fetcher, error) => {
+			pdgaFetch.onError((fetcher, error) => {
 				this.sendSocketNotification("FETCH_ERROR", {
 					url: fetcher.url(),
 					error: error
 				});
 			});
 
-			this.pdgaFetcher = fetcher;
+			this.pdgaFetcher = pdgaFetch;
 		} else {
 			Log.log("Use existing PDGA fetcher");
-			fetcher = this.pdgaFetcher;
-			fetcher.setReloadInterval(reloadInterval);
-			fetcher.broadcastItems();
+			pdgaFetch = this.pdgaFetcher;
+			pdgaFetch.setReloadInterval(reloadInterval);
+			pdgaFetch.broadcastItems();
 		}
 
-		fetcher.startFetch();
+		pdgaFetch.startFetch();
 	},
     broadcastReddit: function () {
 		var self = this;
         self.sendSocketNotification("REDDIT_ITEMS", self.redditFetcher.items());
 	},
-	broadcastPDGA: function () {
-		var self = this;
-		self.sendSocketNotification("PDGA_ITEMS", self.pdgaFetcher.items());
-	},
 	broadcastUltiworld: function () {
 		var self = this;
 		self.sendSocketNotification("ULTIWORLD_ITEMS", self.ultiworldFetcher.items());
+	},
+	broadcastPDGA: function () {
+		var self = this;
+		self.sendSocketNotification("PDGA_ITEMS", self.pdgaFetcher.items());
 	},
 });

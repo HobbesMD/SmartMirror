@@ -2,7 +2,7 @@ Module.register("MMM-DiscGolfNews", {
     defaults: {
         text: "Disc Golf is Awesome! :)",
         reloadInterval: 5 * 60 * 1000, // every 5 minutes
-		updateInterval: 1 * 1000,
+		updateInterval: 3 * 1000,
 		displayTournaments: true,
 		displayReddit: true,
 		displayUltiworld: true,
@@ -17,12 +17,12 @@ Module.register("MMM-DiscGolfNews", {
 		this.activeItem = 0;
 		this.loaded = false;
 
-		if (this.config.displayReddit)
-			this.addRedditFeed();
-		if (this.config.displayTournaments)
-			this.addPDGA();
 		if (this.config.displayUltiworld)
 			this.addUltiworld();
+		if (this.config.displayTournaments)
+			this.addPDGA();
+		if (this.config.displayReddit)
+			this.addRedditFeed();
     },
     getScripts: function () {
         return ["moment.js"];
@@ -31,6 +31,7 @@ Module.register("MMM-DiscGolfNews", {
 		return [this.file('custom.css')];
 	},
 	socketNotificationReceived: function (notification, payload) {
+		console.log(notification)
 		if (notification === "REDDIT_ITEMS") {
 			var found = false;
 			for (let i = 0; i < this.items.length; i++) {
@@ -75,7 +76,6 @@ Module.register("MMM-DiscGolfNews", {
 			this.loaded = true;
 		} else if (notification == "PDGA_ITEMS") {
 			for (let i = 0; i < this.items.length; i++) {
-				console.log(this.items[i]);
 				if (this.items[i].tournament) {
 					this.items.splice(i, 1);
 					i--;
