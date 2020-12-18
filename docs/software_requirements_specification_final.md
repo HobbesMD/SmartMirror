@@ -6,7 +6,7 @@ This is an overview of some of our module functions goals and requirements. This
 This section contains three of our features a lists the related requirements of each.
 
 ## Functional Requirements
-### <Weather Module>
+### Weather Module
 | ID | Requirement | Test Cases |
 | :-------------: | :---------- | :----------: |
 | FR1 | Module shall check weather information and display it on screen with weekly reports. | TC1 |
@@ -15,7 +15,7 @@ This section contains three of our features a lists the related requirements of 
 | FR4 | <Requirement 3> |  |
 | FR5 | <Requirement 3> |  |
   
-### <PDGA Tournament Scores>
+### PDGA Tournament Scores
 | ID | Requirement | Test Cases |
 | :-------------: | :---------- | :----------: |
 | FR6 | This feature shall display the leaderboard for sanctioned PDGA event(s) |  |
@@ -24,7 +24,7 @@ This section contains three of our features a lists the related requirements of 
 | FR9 | The user shall be able to specify specific tournament(s) to display  |  |
 | FR10 | This feature shall display the score for each player relative to par |  |
 
-### <Utliworld Articles>
+### Utliworld Articles
 | ID | Requirement | Test Cases |
 | :-------------: | :---------- | :----------: |
 | FR11 | This feature shall display the most recent articles published on https://discgolf.ultiworld.com/category/news/ |  |
@@ -62,17 +62,11 @@ This section contains three of our features a lists the related requirements of 
 | NFR15 | < Non-Functional Requirement 3> |  |
 
 # Test Specification
-<Description of what this section is>
+This section contains our Unit Tests, Integration Tests, and System Tests
 ## Unit tests
-(copy/paste the below table a minimum of 10 times)
-| ID | Description | Steps | Input Values | Expected Output | Actual Output
-| Pass/Fail | Requirement Link |
-| :-------------: | :----------: | :----------: | :----------: | :----------:
-| :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this
-test case> | <expected output as a result of test case> | <actual output of
-test case> | <did it pass or fail?> | <requirement IDs this test case is
-linked to> |
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this test case> | <expected output as a result of test case> | <actual output of test case> | <did it pass or fail?> | <requirement IDs this test case is linked to> |
   
 ## Integration tests
 (copy/paste the above table a minimum of 5 times)
