@@ -34,27 +34,23 @@ This section contains three of our features a lists the related requirements of 
 | FR15 | This feature shall display the publish date  | TC6 |
 
 ## Non-Functional Requirements
-### <Weather Module>
+### Portability and Compatability
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| NFR1 | <Non-Functional Requirement 1> |  |
-| NFR2 | < Non-Functional Requirement 2> |  |
-| NFR3 | < Non-Functional Requirement 3> |  |
-| NFR4 | < Non-Functional Requirement 3> |  |
-| NFR5 | < Non-Functional Requirement 3> |  |
+| NFR1 | Modules shall work on a Raspberry Pi running a local client |  |
+| NFR2 | Modules shall work on a PC using server only mode in Chrome |  |
   
-### <PDGA Tournament Scores>
+### Usability
 | ID | Requirement | Test Cases |
 | :-------------: | :----------: | :----------: |
-| NFR6 | <Non-Functional Requirement 1> |  |
-| NFR7 | < Non-Functional Requirement 2> |  |
+| NFR3 | User shall easily be able to configure which features shall be turned on |  |
+| NFR4 | Data shall and display shall update promptly with minimal delay |  |
+| NFR5 | Displaying multiple tournaments with multiple divisions shall be easily reabable |  |
+| NFR6 | Users shall be able to view the weather at all times |  |
+| NFR7 | r/DiscGolf Reddit posts shall display necessary information in a readable manner |  |
 | NFR8 | < Non-Functional Requirement 3> |  |
 | NFR9 | < Non-Functional Requirement 3> |  |
 | NFR10 | < Non-Functional Requirement 3> |  |
-  
-### <Ultiworld Articles>
-| ID | Requirement | Test Cases |
-| :-------------: | :----------: | :----------: |
 | NFR11 | <Non-Functional Requirement 1> |  |
 | NFR12 | < Non-Functional Requirement 2> |  |
 | NFR13 | < Non-Functional Requirement 3> |  |
