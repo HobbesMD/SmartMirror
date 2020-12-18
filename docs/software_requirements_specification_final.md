@@ -9,7 +9,7 @@ This section contains three of our features a lists the related requirements of 
 ### Weather Module
 | ID | Requirement | Test Cases |
 | :-------------: | :---------- | :----------: |
-| FR1 | Module shall check weather information and display it on screen with weekly reports. | TC1 |
+| FR1 | Module shall check weather information and display it on screen with weekly reports. |  |
 | FR2 | Users can add and remove locations to receive their weather data. |  |
 | FR3 | On severe weather conditions users gets notified. |  |
 | FR4 | <Requirement 3> |  |
@@ -18,20 +18,20 @@ This section contains three of our features a lists the related requirements of 
 ### PDGA Tournament Scores
 | ID | Requirement | Test Cases |
 | :-------------: | :---------- | :----------: |
-| FR6 | This feature shall display the leaderboard for sanctioned PDGA event(s) |  |
-| FR7 | The user shall be able to configure which divisions to display |  |
-| FR8 | The user shall be able to configure how many tournaments to display |  |
-| FR9 | The user shall be able to specify specific tournament(s) to display  |  |
-| FR10 | This feature shall display the score for each player relative to par |  |
+| FR6 | This feature shall display the leaderboard for sanctioned PDGA event(s) | TC1, TC2, TC3 |
+| FR7 | The user shall be able to configure which divisions to display | TC1, TC3 |
+| FR8 | The user shall be able to configure how many tournaments to display | TC2 |
+| FR9 | The user shall be able to specify specific tournament(s) to display  | TC3 |
+| FR10 | This feature shall display the score for each player relative to par | TC3 |
 
 ### Utliworld Articles
 | ID | Requirement | Test Cases |
 | :-------------: | :---------- | :----------: |
-| FR11 | This feature shall display the most recent articles published on https://discgolf.ultiworld.com/category/news/ |  |
-| FR12 | The user shall be able to configure the number of articles to be displayed |  |
-| FR13 | The user shall be able to filter authors  |  |
-| FR14 | This feature shall display the author |  |
-| FR15 | This feature shall display the publish date  |  |
+| FR11 | This feature shall display the most recent articles published on https://discgolf.ultiworld.com/category/news/ | TC4, TC5 |
+| FR12 | The user shall be able to configure the number of articles to be displayed | TC4 |
+| FR13 | The user shall be able to filter authors  | TC5 |
+| FR14 | This feature shall display the author | TC6 |
+| FR15 | This feature shall display the publish date  | TC6 |
 
 ## Non-Functional Requirements
 ### <Weather Module>
@@ -66,13 +66,20 @@ This section contains our Unit Tests, Integration Tests, and System Tests
 ## Unit tests
 | ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC1 | <TC1 description> | <steps to execute TC1> | <input values to this test case> | <expected output as a result of test case> | <actual output of test case> | <did it pass or fail?> | <requirement IDs this test case is linked to> |
+| TC1 | Test can user configure tournament divisions | Set config file according to input values, run program and check display | In config.js, ```divisions: ["MPO", "MA1"]``` | Only the MA1 divisions shall display | Only the MA1 division displays | Pass | FR7 |
+| TC2 | Test displaying multiple tournaments | Set config file according to input values, run program and check display | In config.js, ```tiers: ["DGPT", "NT", "M"], numEvents: 2,``` | The two most recent events shall be rotated, at the time of writing expect "DGPT Tour Championship" and "DGPT - Play It Again Sports Jonesboro Open" | Display rotates "DGPT Tour Championship" and "DGPT - Play It Again Sports Jonesboro Open" | Pass | FR8 |
+| TC3 | Test displaying scores relative to par | Set config file according to input values, run program and check display | In config.js, ```divisions: ["MA1"], eventIDs: [44298]``` | Top 3 scores shall be: Jeff Vanderploeg -21, Joel Bowser -20, Michael Dykema -18 | Jeff Vanderploeg -21, Joel Bowser -20, Michael Dykema -18 | Pass | FR10 |
+| TC4 | Test can user configure number of Ultiworld articles | Set config file according to input values, run program and check display | In config.js, ```numUltiArticles: 3``` | The three most recent articles should be display, at this time it is: "Disc Golf Network Prices Rising Modestly in 2021", "Open Women And Open Divisions To Receive Equal PDGA Nation Tour Bonus Payout in 2021", and "2021 PDGA National Tour Media Plan: ..." | Display Reads: "Disc Golf Network Prices Rising Modestly in 2021", "Open Women And Open Divisions To Receive Equal PDGA Nation Tour Bonus Payout in 2021", and "2021 PDGA National Tour Media Plan: ..." | Pass | FR12 |
+| TC5 | Test can user filter authors | Set config file according to input values, run program and check display | In config.js, ```numUltiArticles: 3, ultiAuthors: ["Charlie Eisenhood"],``` | Only author to be displayed shll be Charlie Eisenhood | Only articles by Charlie Eisenhood are displayed | Pass | FR13 |
+| TC6 | Test displays Ultiworld article publish date | Set config file according to input values, run program and check display | In config.js, ```numUltiArticles: 3``` | At this moment, most recent article is "Disc Golf Network Prices Rising Modestly in 2021" with a publish date of "Dec 17, 2020" | Display is: "Disc Golf Network Prices Rising Modestly in 2021  Charlie Eisenhood   Dec 17, 2020" | Pass | FR15 |
   
 ## Integration tests
-(copy/paste the above table a minimum of 5 times)
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 
 ## System tests
-(copy/paste the above table a minimum of 5 times)
+| ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
+| :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 
 # Software Artifacts
 This section contains links to the artifacts develop over the course of the semester.
