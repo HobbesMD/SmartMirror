@@ -81,4 +81,10 @@ This section contains our Unit Tests, Integration Tests, and System Tests
 This section contains links to the artifacts develop over the course of the semester.
 * [Weather Module Use Case](https://github.com/HobbesMD/SmartMirror/blob/master/artifacts/use_case_diagrams/Weather%20Use%20Case.pdf)
 * [Email Use Case](https://github.com/HobbesMD/SmartMirror/blob/master/artifacts/use_case_diagrams/Email%20Use%20Case.pdf)
-* [Dis Golf Use Case](https://github.com/HobbesMD/SmartMirror/blob/master/artifacts/use_case_diagrams/Disc%20Golfs%20Use%20Case.pdf)
+* [Disc Golf Use Case](https://github.com/HobbesMD/SmartMirror/blob/master/artifacts/use_case_diagrams/Disc%20Golfs%20Use%20Case.pdf)
+* [Project Proposal](https://github.com/HobbesMD/SmartMirror/blob/master/docs/Team%20SmartMirror%20Proposal.md)
+* [Midterm Presentation](https://github.com/HobbesMD/SmartMirror/blob/master/docs/Team%20SmartMirror%20Midterm%20Presentation.pdf)
+* [Task List](https://github.com/HobbesMD/SmartMirror/blob/master/docs/TaskList.md)
+* [Gantt Chart](https://github.com/HobbesMD/SmartMirror/blob/master/docs/SmartMirror%20Gantt%20Chart%2010-30.pdf)
+* [Final Presentation](https://github.com/HobbesMD/SmartMirror/blob/master/docs/SmartMirror%20Final%20Presentation.pdf)
+* [Meeting Minutes](https://github.com/HobbesMD/SmartMirror/tree/master/meetings)
