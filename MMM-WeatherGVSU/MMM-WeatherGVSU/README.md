@@ -1,0 +1,113 @@
+## MMM-WeatherGVSU
+
+* Driven by the Darksky API 
+
+## Responsive
+
+* This module will respond to the size of its container.
+* It will fit nicely in any region. Squeeze it or stretch it.
+* It will reformat itself as you change the width and height.
+
+
+### Simply by changing the height and width, the module reformats itself.
+![](images/1.png)
+
+![](images/2.png)
+
+![](images/3.png)
+
+![](images/4.png)
+
+![](images/5.png)
+
+![](images/6.png)
+
+![](images/7.png)
+
+## Installation
+
+* `git clone --- into the `~/MagicMirror/modules` directory.
+
+* Get your location and locationCode for config entry. See Instructions below.
+
+## Config.js entry and options
+
+```
+{
+    disabled: false,
+    module: 'MMM-WeatherGVSU',
+    position: 'middle center',
+    config: {
+      location: "staten-island",                // See instructions
+      locationCode: "40d58n74d15",              // See instructions
+      languages: "en",                          // See Languages list
+      tempUnits: "F",                           // F or C
+      font: "Tahoma",                           // See Font list
+      textColor: "#ffffff",                     // Hex color codes.
+      htColor: "#ffffff",                       // high temp color. Hex color codes.
+      ltColor: "#00dfff",                       // low temp color. Hex color codes.
+      sunColor: "#febc2f",                      // Hex color codes.
+      moonColor: "#dfdede",                     // Hex color codes.
+      cloudColor: "#dfdede",                    // Hex color codes.
+      cloudFill: "#1f567c",                     // Hex color codes.
+      rainColor: "#93bffe",                     // Hex color codes.
+      snowColor: "#dfdede",                     // Hex color codes.
+      height: "200px",                          // module is responsive to changes
+      width: "1200px",                          // module is responsive to changes
+      label: "New Dorp",                        // Location seems logical . .
+      label2: "Staten Island",                  // . . . or anything you like
+      days: "7",                                // 3, 5 or 7
+      theme: "dark",                            // See Themes list *** theme overrides bgColor. ***
+      bgColor: "#000000",                       // theme overrides bgColor.
+      icons: "Climacons Animated",              // Iconvault, Climacons or Climacons Animated
+      animationSpeed: 3000,
+      updateInterval: 10 * 60 * 1000,
+    }
+},
+```
+## Instructions for location and locationCode for config.
+
+* Go to https://weatherwidget.io/
+
+### Click the Select Location button. Find your location and select it.
+
+![](images/333.png)
+
+### Click the GET CODE button. You only need what is under the red xxxxxx's
+
+![](images/444.png)
+
+### Add those in your config entry.
+
+## Font List
+
+* Arial
+* Arial Narrow
+* Arial Black
+* Arial Rounded MT Bold
+* Arimo
+* Consolas
+* Courier New
+* Fira Sans
+* Geeorgia
+* Helvetica
+* Jura
+* Monaco
+* Noto Sans
+* Noto Serif
+* Open Sans
+* Open Sans Condensed
+* Palatino
+* Play
+* Roboto
+* Roboto Slab
+* Tahoma
+* Times New Roman
+* Tinos
+* Trebuchet MS
+* Ubuntu
+* Verdana
+
+
+
+* Thank you!
