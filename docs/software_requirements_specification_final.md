@@ -87,14 +87,7 @@ This section contains our Unit Tests, Integration Tests, and System Tests
 | ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 | TC16 | Test display loads quickly | Run program in browser and measure time for display | None | Both modules, MMM-DiscGolfNews and MMM-WeatherGVSU shall appear on screen within 2 seconds | Information is display in <1 second | Pass | NFR4 |
-| TC17 | Test displaying MMM-DiscGolfNews and MMM-WeatherGVSU | Configure both modules to run, run program and check display | In config.js, ```
-{
-	module: 'MMM-WeatherGVSU',
-	position: 'bottom_center'
-{
-	module: "MMM-DiscGolfNews",
-	position: "top_right"	
-}``` | While MMM-DiscGolfNews rotates through different displays, weather should always be present in middle of screen | Weather is always visible, even as disc golf display rotates | Pass | NFR6 |
+| TC17 | Test displaying MMM-DiscGolfNews and MMM-WeatherGVSU | Configure both modules to run, run program and check display | In config.js, ```{ module: 'MMM-WeatherGVSU', position: 'bottom_center' }, { module: "MMM-DiscGolfNews", position: "top_right" }``` | While MMM-DiscGolfNews rotates through different displays, weather should always be present in middle of screen | Weather is always visible, even as disc golf display rotates | Pass | NFR6 |
 | TC18 |  |  |  |  |  |  |  |
 | TC19 |  |  |  |  |  |  |  |
 | TC20 |  |  |  |  |  |  |  |
