@@ -36,26 +36,26 @@ This section contains three of our features a lists the related requirements of 
 ## Non-Functional Requirements
 ### Portability and Compatability
 | ID | Requirement | Test Cases |
-| :-------------: | :----------: | :----------: |
+| :-------------: | :---------- | :----------: |
 | NFR1 | Modules shall work on a Raspberry Pi running a local client |  |
 | NFR2 | Modules shall work on a PC using server only mode in Chrome |  |
   
 ### Usability
 | ID | Requirement | Test Cases |
-| :-------------: | :----------: | :----------: |
+| :-------------: | :---------- | :----------: |
 | NFR3 | User shall easily be able to configure which features shall be turned on | TC11 |
-| NFR4 | Data shall and display shall update promptly with minimal delay | TC11 |
+| NFR4 | Data shall and display shall update promptly with minimal delay | TC16 |
 | NFR5 | Displaying multiple tournaments with multiple divisions shall be easily reabable | TC12 |
-| NFR6 | Users shall be able to view the weather at all times | TC13 |
+| NFR6 | Users shall be able to view the weather at all times | TC17 |
 | NFR7 | r/DiscGolf Reddit posts shall display necessary information in a readable manner | TC11, TC12 |
-| NFR8 | < Non-Functional Requirement 3> |  |
-| NFR9 | < Non-Functional Requirement 3> |  |
-| NFR10 | < Non-Functional Requirement 3> |  |
-| NFR11 | <Non-Functional Requirement 1> |  |
-| NFR12 | < Non-Functional Requirement 2> |  |
-| NFR13 | < Non-Functional Requirement 3> |  |
-| NFR14 | < Non-Functional Requirement 3> |  |
-| NFR15 | < Non-Functional Requirement 3> |  |
+| NFR8 |  |  |
+| NFR9 |  |  |
+| NFR10 |  |  |
+| NFR11 |  |  |
+| NFR12 |  |  |
+| NFR13 |  |  |
+| NFR14 |  |  |
+| NFR15 |  |  |
 
 # Test Specification
 This section contains our Unit Tests, Integration Tests, and System Tests
@@ -79,22 +79,22 @@ This section contains our Unit Tests, Integration Tests, and System Tests
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 | TC11 | Test rotation through different disc golf information | Configure all 3 disc golf sources to display, run program and check display | In config.js, ```displayUltiworld: true, displayReddit: true, displayTournaments: true,``` | The screen should rotate through r/DiscGolf posts, tournament scores, and Ultiworld articles | All three different components are displayed | Pass | NFR3 |
 | TC12 | Test multiple tournaments can be displayed with all components of MMM-DiscGolfNews | Configure all 3 disc golf sources to display, run program and check display | In config.js, ```displayUltiworld: true, displayReddit: true, displayTournaments: true, numEvents: 4,``` | There should be 6 total screens to rotate through, 4 tournaments, 1 for r/DiscGolf and 1 for Ultiworld | Pass | There are 6 displays rotated through, 4 tournaments, 1 Reddit, and 1 Ultiworld | NFR5 |
-| TC13 | Test displaying MMM-DiscGolfNews and MMM-WeatherGVSU | Configure both modules to run, run program and check display | In config.js, ```
-{
-			module: 'MMM-WeatherGVSU',
-			position: 'bottom_center'
-		{
-			module: "MMM-DiscGolfNews",
-			position: "top_right"	
-		}``` | While MMM-DiscGolfNews rotates through different displays, weather should always be present in middle of screen | Weather is always visible, even as disc golf display rotates | Pass | NFR6 |
+| TC13 |  |  |  |  |  |  |  |
 | TC14 |  |  |  |  |  |  |  |
 | TC15 |  |  |  |  |  |  |  |
 
 ## System tests
 | ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
-| TC16 | Test rotation through different disc golf information | Configure all 3 disc golf source to display, run program and check display | In config.js, ```displayUltiworld: true, displayReddit: true, displayTournaments: true,``` | The screen should rotate through r/DiscGolf posts, tournament scores, and Ultiworld articles | All three different components are displayed | Pass | NFR3 |
-| TC17 |  |  |  |  |  |  |  |
+| TC16 | Test display loads quickly | Run program in browser and measure time for display | None | Both modules, MMM-DiscGolfNews and MMM-WeatherGVSU shall appear on screen within 2 seconds | Information is display in <1 second | Pass | NFR4 |
+| TC17 | Test displaying MMM-DiscGolfNews and MMM-WeatherGVSU | Configure both modules to run, run program and check display | In config.js, ```
+{
+	module: 'MMM-WeatherGVSU',
+	position: 'bottom_center'
+{
+	module: "MMM-DiscGolfNews",
+	position: "top_right"	
+}``` | While MMM-DiscGolfNews rotates through different displays, weather should always be present in middle of screen | Weather is always visible, even as disc golf display rotates | Pass | NFR6 |
 | TC18 |  |  |  |  |  |  |  |
 | TC19 |  |  |  |  |  |  |  |
 | TC20 |  |  |  |  |  |  |  |
