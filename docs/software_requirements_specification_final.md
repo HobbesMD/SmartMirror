@@ -9,7 +9,7 @@ This section contains three of our features a lists the related requirements of 
 ### Weather Module
 | ID | Requirement | Test Cases |
 | :-------------: | :---------- | :----------: |
-| FR1 | Module shall check weather information and display it on screen with weekly reports. | TC7 |
+| FR1 | Module shall check weather information and display it on screen with weekly reports. | TC7, TC8 |
 | FR2 | Users can add and remove locations to receive their weather data. |  |
 | FR3 | On severe weather conditions users gets notified. |  |
 | FR4 | User can switch between fahrenheit and celsius. |  |
