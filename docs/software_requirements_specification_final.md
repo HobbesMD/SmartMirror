@@ -69,7 +69,7 @@ This section contains our Unit Tests, Integration Tests, and System Tests
 | TC5 | Test can user filter authors | Set config file according to input values, run program and check display | In config.js, ```numUltiArticles: 3, ultiAuthors: ["Charlie Eisenhood"],``` | Only author to be displayed shll be Charlie Eisenhood | Only articles by Charlie Eisenhood are displayed | Pass | FR13 |
 | TC6 | Test displays Ultiworld article publish date | Set config file according to input values, run program and check display | In config.js, ```numUltiArticles: 3``` | At this moment, most recent article is "Disc Golf Network Prices Rising Modestly in 2021" with a publish date of "Dec 17, 2020" | Display is: "Disc Golf Network Prices Rising Modestly in 2021  Charlie Eisenhood   Dec 17, 2020" | Pass | FR15 |
 
-| TC7 |  |  |  |  |  |  |  |
+| TC7 | xcxcxcxc xcxc xc |  |  |  |  |  |  |
 | TC8 |  |  |  |  |  |  |  |
 | TC9 |  |  |  |  |  |  |  |
 | TC10 |  |  |  |  |  |  |  |
