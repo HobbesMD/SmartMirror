@@ -65,7 +65,7 @@ This section contains our Unit Tests, Integration Tests, and System Tests
 | TC5 | Test can user filter authors | Set config file according to input values, run program and check display | In config.js, ```numUltiArticles: 3, ultiAuthors: ["Charlie Eisenhood"],``` | Only author to be displayed shll be Charlie Eisenhood | Only articles by Charlie Eisenhood are displayed | Pass | FR13 |
 | TC6 | Test displays Ultiworld article publish date | Set config file according to input values, run program and check display | In config.js, ```numUltiArticles: 3``` | At this moment, most recent article is "Disc Golf Network Prices Rising Modestly in 2021" with a publish date of "Dec 17, 2020" | Display is: "Disc Golf Network Prices Rising Modestly in 2021  Charlie Eisenhood   Dec 17, 2020" | Pass | FR15 | |
 | TC7 | Test user can configure width and height| Set config file according to input values, run program and check display |  |  |  |  |  |
-| TC8 | Test location and location code configuration | Set config file according to input values, run program and check display |  |  |  |  |  |
+| TC8 | Test location and location code configuration | Set config file according to input values, run program and check display | In config.js,  location: "holland",  locationCode: "42d79n86d11",      |  |  |  |  |
 | TC9|  | Set config file according to input values, run program and check display |  |  |  |  |  |
 
 
@@ -84,7 +84,7 @@ This section contains our Unit Tests, Integration Tests, and System Tests
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 | TC16 | Test display loads quickly | Run program in browser and measure time for display | None | Both modules, MMM-DiscGolfNews and MMM-WeatherGVSU shall appear on screen within 2 seconds | Information is display in <1 second | Pass | NFR4 |
 | TC17 | Test displaying MMM-DiscGolfNews and MMM-WeatherGVSU | Configure both modules to run, run program and check display | In config.js, ```{ module: 'MMM-WeatherGVSU', position: 'bottom_center' }, { module: "MMM-DiscGolfNews", position: "top_right" }``` | While MMM-DiscGolfNews rotates through different displays, weather should always be present in middle of screen | Weather is always visible, even as disc golf display rotates | Pass | NFR6 |
-| TC18 |  |  |  |  |  |  |  |
+| TC18 |  |  |  |  |  |  |  | 
 | TC19 |  |  |  |  |  |  |  |
 | TC20 |  |  |  |  |  |  |  |
 
