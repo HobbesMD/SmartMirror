@@ -11,8 +11,8 @@ This section contains three of our features a lists the related requirements of 
 | :-------------: | :---------- | :----------: |
 | FR1 | Module shall check weather information and display it on screen with weekly reports. | TC7, TC8 |
 | FR2 | Users can add and remove locations to receive their weather data. | TC8 |
-| FR3 | On severe weather conditions users gets notified. | TC9 |
-| FR4 | User can switch between fahrenheit and celsius. |  |
+| FR3 | On severe weather conditions users gets notified. | |
+| FR4 | User can switch between fahrenheit and celsius. | TC9  |
 | FR5 | User can switch between different locations with location codes |  |
   
 ### PDGA Tournament Scores
