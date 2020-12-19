@@ -10,7 +10,7 @@ This section contains three of our features a lists the related requirements of 
 | ID | Requirement | Test Cases |
 | :-------------: | :---------- | :----------: |
 | FR1 | Module shall check weather information and display it on screen with weekly reports. | TC7, TC8 |
-| FR2 | Users can add and remove locations to receive their weather data. |  |
+| FR2 | Users can add and remove locations to receive their weather data. | TC8 |
 | FR3 | On severe weather conditions users gets notified. |  |
 | FR4 | User can switch between fahrenheit and celsius. |  |
 | FR5 | User can switch between different locations with location codes |  |
@@ -65,7 +65,7 @@ This section contains our Unit Tests, Integration Tests, and System Tests
 | TC5 | Test can user filter authors | Set config file according to input values, run program and check display | In config.js, ```numUltiArticles: 3, ultiAuthors: ["Charlie Eisenhood"],``` | Only author to be displayed shll be Charlie Eisenhood | Only articles by Charlie Eisenhood are displayed | Pass | FR13 |
 | TC6 | Test displays Ultiworld article publish date | Set config file according to input values, run program and check display | In config.js, ```numUltiArticles: 3``` | At this moment, most recent article is "Disc Golf Network Prices Rising Modestly in 2021" with a publish date of "Dec 17, 2020" | Display is: "Disc Golf Network Prices Rising Modestly in 2021  Charlie Eisenhood   Dec 17, 2020" | Pass | FR15 | |
 | TC7 | Test user can configure width and height| Set config file according to input values, run program and check display | In config.js, ```height: "300px", width: "1300px"```  | Module should display at top right of the screen represented as a row | module succesfully displays at top right of the screen respresented in row format height at 300px awith width at 1300px | PASS | FR1 |
-| TC8 | Test location and location code configuration | Set config file according to input values, run program and check display | In config.js,  ``` location: "holland",  locationCode: "42d79n86d11"```     |  |  |  |  |
+| TC8 | Test location and location code configuration | Set config file according to input values, run program and check display | In config.js,  ``` location: "holland",  locationCode: "42d79n86d11"```  | Module should display location name on first block of the row and display correct weather: 38, 38, 37, 37, 37, 43, 28, 25 | 38,38,37,37,37,43,28,25 | Pass |  FR2
 | TC9|  | In config.js,Set config file according to input values, run program and check display |  |  |  |  |  |
 
 
