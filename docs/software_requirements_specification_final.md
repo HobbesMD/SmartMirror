@@ -75,10 +75,9 @@ This section contains our Unit Tests, Integration Tests, and System Tests
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 | TC11 | Test rotation through different disc golf information | Configure all 3 disc golf sources to display, run program and check display | In config.js, ```displayUltiworld: true, displayReddit: true, displayTournaments: true,``` | The screen should rotate through r/DiscGolf posts, tournament scores, and Ultiworld articles | All three different components are displayed | Pass | NFR3 |
 | TC12 | Test multiple tournaments can be displayed with all components of MMM-DiscGolfNews | Configure all 3 disc golf sources to display, run program and check display | In config.js, ```displayUltiworld: true, displayReddit: true, displayTournaments: true, numEvents: 4,``` | There should be 6 total screens to rotate through, 4 tournaments, 1 for r/DiscGolf and 1 for Ultiworld | Pass | There are 6 displays rotated through, 4 tournaments, 1 Reddit, and 1 Ultiworld | NFR5 |
-| TC13 | Test animations works with each weather component and day |  | ```In config.js,	updateInterval: 15 * 60 * 1000,
-	}, start: function () { 	self = this;	// update timer setInterval(function() { 	self.updateDom(self.config.animationSpeed || 0); 	}, this.config.updateInterval);}, ``` |  |  |  |  |
-| TC14 |  |  |  |  |  |  |  |
-| TC15 |  |  |  |  |  |  |  |
+| TC13 | Test animations works with each weather component and day |  | In config.js,	```updateInterval: 15 * 60 * 1000,
+	}, start: function () { self = this;	// update timer setInterval(function() { 	self.updateDom(self.config.animationSpeed || 0); }, this.config.updateInterval);},``` |  |  |  |  |
+
 
 ## System tests
 | ID | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
