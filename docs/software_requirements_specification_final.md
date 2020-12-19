@@ -50,10 +50,8 @@ This section contains three of our features a lists the related requirements of 
 | NFR7 | r/DiscGolf Reddit posts shall display necessary information in a readable manner | TC11, TC12 |
 | NFR8 | Wearther Module will reformat itself as you change the width and height. |  |
 | NFR9 | Weather Module connects with DarkSky API |  |
-| NFR10 |  |  |
-| NFR11 |  |  |
-| NFR12 |  |  |
-| NFR13 |  |  |
+| NFR10 | User can switch between 3,5,or 7 day intervals for weather.  |  |
+
 
 # Test Specification
 This section contains our Unit Tests, Integration Tests, and System Tests
