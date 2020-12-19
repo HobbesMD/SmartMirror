@@ -51,6 +51,7 @@ This section contains three of our features a lists the related requirements of 
 | NFR8 | Wearther Module will reformat itself as you change the width and height. |  |
 | NFR9 | Weather Module connects with DarkSky API |  |
 | NFR10 | User can switch between 3,5,or 7 day intervals for weather.  |  |
+| NFR10 | User should  |  |
 
 
 # Test Specification
@@ -75,7 +76,7 @@ This section contains our Unit Tests, Integration Tests, and System Tests
 | :-------------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 | TC11 | Test rotation through different disc golf information | Configure all 3 disc golf sources to display, run program and check display | In config.js, ```displayUltiworld: true, displayReddit: true, displayTournaments: true,``` | The screen should rotate through r/DiscGolf posts, tournament scores, and Ultiworld articles | All three different components are displayed | Pass | NFR3 |
 | TC12 | Test multiple tournaments can be displayed with all components of MMM-DiscGolfNews | Configure all 3 disc golf sources to display, run program and check display | In config.js, ```displayUltiworld: true, displayReddit: true, displayTournaments: true, numEvents: 4,``` | There should be 6 total screens to rotate through, 4 tournaments, 1 for r/DiscGolf and 1 for Ultiworld | There are 6 displays rotated through, 4 tournaments, 1 Reddit, and 1 Ultiworld  | Pass| NFR5 |
-| TC13 | Test animations works with each weather component and day |  | In config.js,	```updateInterval: 15 * 60 * 1000, },``` in MMM-WeatherGVSU.js  ```start: function () { self = this; setInterval(function() { 	self.updateDom(self.config.animationSpeed 0); }, this.config.updateInterval);}``` | It should update animation timer and speed with each day configured in config settings | Pass | Animation shows up on every day and is update by the time interval  15 * 60 * 1000 as needed |  |
+| TC13 | Test animations works with each weather component and day |  | In config.js,	```updateInterval: 15 * 60 * 1000, },``` in MMM-WeatherGVSU.js  ```start: function () { self = this; setInterval(function() { 	self.updateDom(self.config.animationSpeed 0); }, this.config.updateInterval);}``` | It should update animation timer and speed with each day configured in config settings | Pass | Animation shows up on every day and is update by the time interval  15 * 60 * 1000 as needed | NFR3 |
 
 
 ## System tests
