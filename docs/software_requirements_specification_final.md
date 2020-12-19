@@ -12,8 +12,8 @@ This section contains three of our features a lists the related requirements of 
 | FR1 | Module shall check weather information and display it on screen with weekly reports. |  |
 | FR2 | Users can add and remove locations to receive their weather data. |  |
 | FR3 | On severe weather conditions users gets notified. |  |
-| FR4 | <Requirement 3> |  |
-| FR5 | <Requirement 3> |  |
+| FR4 | User can switch between fahrenheit and celsius. |  |
+| FR5 | |  |
   
 ### PDGA Tournament Scores
 | ID | Requirement | Test Cases |
@@ -48,7 +48,7 @@ This section contains three of our features a lists the related requirements of 
 | NFR5 | Displaying multiple tournaments with multiple divisions shall be easily reabable | TC12 |
 | NFR6 | Users shall be able to view the weather at all times | TC17 |
 | NFR7 | r/DiscGolf Reddit posts shall display necessary information in a readable manner | TC11, TC12 |
-| NFR8 |  |  |
+| NFR8 | Wearther Module will reformat itself as you change the width and height. |  |
 | NFR9 |  |  |
 | NFR10 |  |  |
 | NFR11 |  |  |
