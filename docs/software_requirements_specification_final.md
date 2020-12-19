@@ -49,8 +49,8 @@ This section contains three of our features a lists the related requirements of 
 | NFR6 | Users shall be able to view the weather at all times | TC17 |
 | NFR7 | r/DiscGolf Reddit posts shall display necessary information in a readable manner | TC11, TC12 |
 | NFR8 | Wearther Module will reformat itself as you change the width and height. |  |
-| NFR9 |  |  |
-| NFR10 |  |  |
+| NFR9 | User will be able to configure eather display with different fonts listed on Readme. |  |
+| NFR10 | User will be able to change between locations with different location codes |  |
 | NFR11 |  |  |
 | NFR12 |  |  |
 | NFR13 |  |  |
