@@ -54,8 +54,6 @@ This section contains three of our features a lists the related requirements of 
 | NFR11 |  |  |
 | NFR12 |  |  |
 | NFR13 |  |  |
-| NFR14 |  |  |
-| NFR15 |  |  |
 
 # Test Specification
 This section contains our Unit Tests, Integration Tests, and System Tests
